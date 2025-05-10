@@ -19,7 +19,7 @@ const Home = () => {
         if(selected == 'green'){
           setSelected('red');
         }
-      },3000)
+      },2000)
       }
     
   },[active, selected])
