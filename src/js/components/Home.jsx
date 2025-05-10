@@ -33,7 +33,7 @@ const Home = () => {
       <div className={`yellow ${selected == 'yellow' ? 'active' : ''}`} ></div>
       <div className={`green ${selected == 'green' ? 'active' : ''}`} ></div>
     </div>
-    <button className="btn btn-success" onClick={() => setActive(true)}>Activar</button>
+    <button className="btn btn-success boton" onClick={() => setActive(true)}>Activar</button>
   </div>
   
 </>

@@ -51,3 +51,7 @@ opacity: 0.2;
 .active{
   opacity: 1;
 }
+.boton{
+  position: relative;
+  left: 200px;
+}
