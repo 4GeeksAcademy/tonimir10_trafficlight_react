@@ -12,6 +12,8 @@
 
 .trafficlight{
   height: 100vh;
+  background-image: url('https://cdn.pixabay.com/photo/2021/01/30/12/02/street-5963619_960_720.jpg');
+  background-size: cover;
 }
 .p-box{
  width: 15px;
