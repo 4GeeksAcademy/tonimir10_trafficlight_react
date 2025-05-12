@@ -3,12 +3,17 @@ import React, { useEffect, useState } from "react";
 //import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-const Home = () => {
+
+const Light = ({ color, isActive }) => {
+  return <div className={`${color} ${isActive ? 'active' : ''}`}></div>;
+};
+
+const Trafficlight = () => {
   const [selected, setSelected] = useState('red');
   const [active, setActive] = useState(false);
   useEffect(() => {
    if(active){
-      setInterval(() => {
+     const interval = setInterval(() => {
         
         if(selected == 'red'){
           setSelected('yellow');
@@ -20,6 +25,7 @@ const Home = () => {
           setSelected('red');
         }
       },2000)
+      return () => clearInterval(interval);
       }
     
   },[active, selected])
@@ -29,15 +35,16 @@ const Home = () => {
   <div className="trafficlight">
     <div className="p-box"></div>
     <div className="box-light">
-      <div className={`red ${selected == 'red' ? 'active' : ''}`}></div>
-      <div className={`yellow ${selected == 'yellow' ? 'active' : ''}`} ></div>
-      <div className={`green ${selected == 'green' ? 'active' : ''}`} ></div>
+      <Light color="red" isActive={selected === 'red'} />
+        <Light color="yellow" isActive={selected === 'yellow'} />
+        <Light color="green" isActive={selected === 'green'} />
     </div>
     <button className="btn btn-success boton" onClick={() => setActive(true)}>Activar</button>
+    <button className="btn btn-danger boton2" onClick={() => setActive(false)}>Parar</button>
   </div>
   
 </>
 	);
 };
 
-export default Home;
+export default Trafficlight;
